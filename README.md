@@ -1,10 +1,5 @@
 # World-View-Survey-Visualization
 
----
-layout: post
-title: World View Survey Visualization
----
-
 ####Finding interesting Data
 I searched for interesting data in the open database of the World View Survey. They do a worldwide survey with the purpose of studying changing values and their impact on social and political life. The WVS is the largest non-commercial, cross-national, time series investigation of human beliefs and values ever executed, currently including interviews with almost 400,000 respondents. The survey is done almost 100 countries which contain almost 90 percent of the world’s population.
 
@@ -16,14 +11,19 @@ Their survey, which started in 1981 is conducted in rounds, or “waves” as th
 *Option 1: Having a strong leader who does not have to bother with parliament and elections”*
 
 This question is interesting to me, because it reflects on both the fact that these nations have a history of violent military regimes but also on frustration towards the current democratic system. I spent last summer in Argentina; a country in deep economical crisis so I thought it might be interesting to see how answers to this question had changed over time. Here is the data from the World View Survey:
+
 ![My helpful screenshot](https://github.com/EvertLagerberg/EvertLagerberg.github.io/blob/master/images/WWS1.png)
+
 This data show that the answer Very Good and Fairly Good both increased about 10% since 1994. This I found quite remarkable. And I was interested  in visualising it.
 
 ###VisualiZation prototyping
+
 ![My helpful screenshot](https://github.com/EvertLagerberg/EvertLagerberg.github.io/blob/master/images/WWS2.png)
+
 This visualisation of the data can be created through WVS own online visualisation tool. It shows the increase in answers “Very Good” and “Fairly Good” but separately. I find that the increase in these answers makes more impact and tell more of a story if visualised together. 
 
 ![My helpful screenshot](https://github.com/EvertLagerberg/EvertLagerberg.github.io/blob/master/images/WWS3.png)
+
 I used the WVS online tool to make a pie chart of the answers to the question in each wave and placed them next to each other chronologically. This visualisation method has been called “small multiples”; the same graphical design structure repeated but with one variable changed. My variable is of course time. In comparison with the chart I think this visualisation does more to tell the story since you can see the shift at a glance.
 
 Next I used D3 to improve my “small multiples”-visualisation idea. I will explain this through the model of the Visualisation Pipeline.
@@ -51,10 +51,12 @@ I then mapped each results to a pie chart in D3. But instead of putting each pie
 
 ####Views
 I created a view in D3 where the state of the pie chart could be altered by click of radiobutton representing the different waves. On choosing a wave, the pie chart will do an animated transform to that state. So if you go through the waves chronologically you can actually see the increase in positive answer over time. I then played around with a colour scale that made good representation of the answers. I also added a legend. 
+
 ![My helpful screenshot](https://github.com/EvertLagerberg/EvertLagerberg.github.io/blob/master/images/WWS4.png)
 
 ###Expanding my research questions
 I was happy with my visualisation of Argentina's posture on strong leaders over time. However I was interesting to see how this corresponded with other South American nations. So I made equivalent visualisations for all South American nations available from the WVS data base and place them in the same view as the Argentina visualisation. Unfortunately not all the wave 3 through wave 6 was available for all countries, why I had some states completely grey (meaning "no data) I thought it would be cool if the user could play time forward for all nations simultaneously so I added a overall control that rules over all other controls. The user can still interact with individual pie charts. I also added a small box which appears when hovering over each nations pie chart. This works as details-on-demand about the political history of each nation.
+
 ![My helpful screenshot](https://github.com/EvertLagerberg/EvertLagerberg.github.io/blob/master/images/WWS5.png)
 
 ###Ending thoughts
